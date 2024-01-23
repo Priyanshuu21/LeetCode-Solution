@@ -1,0 +1,51 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+
+int sorting(vector<int>arr,int size,int target){
+    for(int i=0;i<size-1;i++){
+        for(int j=0;j<size-i;j++){
+            if(arr[j] > arr[j+1]){
+                swap(arr[j],arr[j+1]);
+            }
+        }
+    }
+    cout<<"After sorting your array : "<<endl;
+    for(int i=0;i<size;i++){
+        cout<<arr[i]<<" ";
+    }
+
+    for(int i=0;i<size;i++){
+        if(target == arr[i]){
+            cout<<"Element found at index "<<i<<endl;
+        }
+    }
+}
+
+
+
+int main(){
+    int size;
+    cout<<"Enter size of an array : "<<endl;
+    cin>>size;
+
+    vector<int>arr(size);
+    cout<<"Enter elements in the array : "<<endl;
+
+    for(int i=0;i<size;i++){
+        cin>>arr[i];
+    }
+
+    cout<<"Before sorting : "<<endl;
+    for(int i=0;i<size;i++){
+        cout<<arr[i]<<" ";
+    }
+
+    cout<<endl;
+
+    int target;
+    cout<<"Enter target element in the array : "<<endl;
+    cin>>target;
+    cout<<endl;
+    sorting(arr,size,target);
+}
